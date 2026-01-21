@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infomotion Counter</title>
+  <style>
+    :root {
+      --blue: #2b4cff;
+      --purple: #7a4dff;
+      --light-bg: #f4f6ff;
+      --card-bg: #ffffff;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app {
+      width: 1200px;
+      height: 700px;
+      background: var(--light-bg);
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: linear-gradient(180deg, var(--blue), var(--purple));
+      color: white;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .nav button {
+      width: 100%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .nav button:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* Main */
+    .main {
+      padding: 32px;
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: var(--text-dark);
+    }
+
+    .search-box {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      font-size: 15px;
+    }
+
+    .search-box button {
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--text-dark);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .return-box {
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .return-box h2 {
+      margin-top: 0;
+      color: var(--text-dark);
+    }
+
+    .return-step {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .confirm {
+      margin-top: 16px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      width: 100%;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">Infomotion Counter</div>
+      <div class="nav">
+        <button>🏠 Dashboard</button>
+        <button>📚 Book Search</button>
+        <button>🧭 Find My Way</button>
+        <button>📥 Return Books</button>
+        <button>📅 Library Events</button>
+        <button>❓ Help</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="header">
+        <h1>Welcome to the Library</h1>
+        <span>10:45 AM</span>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Search by title, author, or keyword" />
+        <button>Search</button>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Book Search</h3>
+          <p>Find books quickly and view their exact shelf location.</p>
+        </div>
+        <div class="card">
+          <h3>Navigation</h3>
+          <p>Get step-by-step directions to the book location.</p>
+        </div>
+        <div class="card">
+          <h3>Library Events</h3>
+          <p>Stay updated with upcoming talks and activities.</p>
+        </div>
+      </div>
+
+      <div class="return-box">
+        <h2>Book Return</h2>
+        <div class="return-step">1. Place the book into the return compartment.</div>
+        <div class="return-step">2. Wait for system verification.</div>
+        <div class="return-step">3. Receive on-screen confirmation.</div>
+        <button class="confirm">Confirm Return</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
